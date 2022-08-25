@@ -5,6 +5,8 @@ import JpaStudy_02.domain.Order;
 import JpaStudy_02.domain.OrderStatus;
 import JpaStudy_02.repository.OrderRepository;
 import JpaStudy_02.repository.OrderSearch;
+import JpaStudy_02.repository.order.simplequery.OrderSimpleQueryDto;
+import JpaStudy_02.repository.order.simplequery.OrderSimpleQueryRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +28,7 @@ import static java.util.stream.Collectors.toList;
 public class OrderSimpleApiController {
 
     private final OrderRepository orderRepository;
+    private final OrderSimpleQueryRepository orderSimpleQueryRepository;
 
     @GetMapping("/api/v1/simple-orders")
     public List<Order> ordersV1() {
@@ -46,6 +49,22 @@ public class OrderSimpleApiController {
                 .collect(toList());
 
         return result;
+    }
+
+    // 엔티티를 DTO로 변환하는 방법 + Fetch Join으로 성능 최적화
+    @GetMapping("/api/v3/simple-orders")
+    public List<SimpleOrderDto> ordersV3() {
+        List<Order> orders = orderRepository.findAllWithMemberDelivery();
+        List<SimpleOrderDto> result = orders.stream()
+                .map(o -> new SimpleOrderDto(o))
+                .collect(toList());
+        return result;
+    }
+
+    // DTO로 직접 조회하는 방법
+    @GetMapping("/api/v4/simple-orders")
+    public List<OrderSimpleQueryDto> ordersV4() {
+        return orderSimpleQueryRepository.findOrderDtos();
     }
 
     @Data
