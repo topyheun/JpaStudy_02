@@ -10,5 +10,5 @@
 <br>
 
 **자세한 Review는 아래 링크에 정리해두었습니다. ↓↓↓**
-> [🍒[ Blog ]🍒](https://velog.io/@topy/JPA-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94#-%EC%A0%95%EB%A6%AC)
+> [🍒[ Blog ]🍒](https://velog.io/@topy/JPA-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94)
 
