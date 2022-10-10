@@ -5,8 +5,10 @@
 ![jpa02](https://user-images.githubusercontent.com/41532299/193097168-a9227c25-dac7-4f00-a4c6-a3857ece8a30.gif)
 
 ## 🟢 Review 🟢
-* 엔티티 직접 노출
-* 조회시 DTO로 변환, DTO로 바로 조회
-* 컬렉션 fetch join + 페이징
-* 성능 최적화 / 코드 복잡도
-* OSIV
+
+**JPA 조회시 발생하는 N + 1 문제, 컬렉션 조회 주의할 점, Fetch Join의 한계점과 페이징, OSIV 등 JPA를 사용하며 접할 수 있는 다양한 문제점들을 학습한 프로젝트입니다.**
+<br>
+
+**자세한 Review는 아래 링크에 정리해두었습니다. ↓↓↓**
+> [🍒[ Blog ]🍒](https://velog.io/@topy/JPA-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94#-%EC%A0%95%EB%A6%AC)
+
